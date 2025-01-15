@@ -1,0 +1,78 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Buds Restaurant - Home-style breakfast in a warm, welcoming atmosphere" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+		<title>{title} | Buds Restaurant</title>
+	</head>
+	<body>
+		<header class="fixed w-full bg-white/90 backdrop-blur-sm z-50">
+			<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+				<a href="/" class="text-2xl font-bold text-orange-800">BUDS</a>
+				<div class="space-x-6">
+					<a href="/menu" class="text-orange-900 hover:text-orange-700">Menu</a>
+					<a href="/location" class="text-orange-900 hover:text-orange-700">Location</a>
+					<a href="/about" class="text-orange-900 hover:text-orange-700">About</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer class="bg-orange-900 text-white py-12">
+			<div class="container mx-auto px-4">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div>
+						<h3 class="text-xl font-bold mb-4">Hours</h3>
+						<p>Monday - Saturday: 6am - 2pm</p>
+						<p>Sunday: 7am - 1pm</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-bold mb-4">Location</h3>
+						<p>295 Lake St</p>
+						<p>Nashua, NH 03060</p>
+						<p>Phone: (603) 883-0019</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-bold mb-4">Follow Us</h3>
+						<div class="space-x-4">
+							<a href="#" class="hover:text-orange-300">Instagram</a>
+							<a href="#" class="hover:text-orange-300">Facebook</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--orange-primary: #C45525;
+		--orange-secondary: #E67E22;
+		--brown-accent: #8B4513;
+	}
+	html {
+		font-family: 'Source Sans 3', sans-serif;
+		background: #FFFAF5;
+		scroll-behavior: smooth;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Oswald', sans-serif;
+	}
+</style>

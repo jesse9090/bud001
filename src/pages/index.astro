@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+	<div class="min-h-screen">
+		<!-- Hero Section -->
+		---
+// src/pages/index.astro
+---
+
+<section class="relative h-screen flex items-center justify-center">
+  <div class="absolute inset-0 bg-[url('/hero-breakfast.jpg')] bg-cover bg-center"></div>
+  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="relative text-center text-white">
+    <h1 class="text-6xl md:text-8xl font-bold mb-4">BUDS</h1>
+    <p class="text-xl md:text-2xl mb-8">Where Breakfast Dreams Come True</p>
+    <a href="/menu" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-lg transition-colors">
+      View Menu
+    </a>
+  </div>
+</section>
+
+		<!-- Featured Section -->
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl text-center mb-12 text-orange-900">Featured Dishes</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="text-center">
+						<img src="/dish1.jpg" alt="Classic Pancakes" class="w-full h-64 object-cover rounded-lg mb-4">
+						<h3 class="text-2xl mb-2">Classic Pancakes</h3>
+						<p class="text-gray-600">Fluffy buttermilk pancakes served with pure maple syrup</p>
+					</div>
+					<div class="text-center">
+						<img src="/dish2.jpg" alt="Farmer's Omelet" class="w-full h-64 object-cover rounded-lg mb-4">
+						<h3 class="text-2xl mb-2">Farmer's Omelet</h3>
+						<p class="text-gray-600">Three-egg omelet packed with fresh vegetables and cheese</p>
+					</div>
+					<div class="text-center">
+						<img src="/dish3.jpg" alt="Breakfast Burrito" class="w-full h-64 object-cover rounded-lg mb-4">
+						<h3 class="text-2xl mb-2">Breakfast Burrito</h3>
+						<p class="text-gray-600">Scrambled eggs, chorizo, potatoes, and cheese wrapped in a warm tortilla</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Preview -->
+		<section class="py-20 bg-orange-50">
+			<div class="container mx-auto px-4">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+					<div>
+						<h2 class="text-4xl mb-6 text-orange-900">Our Story</h2>
+						<p class="text-lg mb-6 text-gray-700">
+							Since 1985, Buds Restaurant has been serving up the best breakfast in town. 
+							Our commitment to using fresh, local ingredients and making everything from 
+							scratch has made us a beloved part of the community.
+						</p>
+						<a href="/about" class="text-orange-600 hover:text-orange-700 font-bold">Learn More →</a>
+					</div>
+					<div>
+						<img src="/restaurant-interior.jpg" alt="Buds Restaurant Interior" class="rounded-lg shadow-xl">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</Layout>
